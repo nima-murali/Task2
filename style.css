@@ -1,0 +1,135 @@
+body{
+    background-color: #f2e5e6;
+}
+.container{
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    height: 520px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.container .col-left{
+    width: 40%;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 10px;
+    background: white;
+}
+.container .col-right{
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(to right,#fc0c51, #fc0b4a);
+
+}
+h2{
+    padding-top: 30px;
+    text-align: center;
+    font-family: Arial,Sans-serif;
+    font-weight: 800;
+    font-size: 38px;
+}
+.fb-icon{
+    font-size:23px;
+    color:  #404040;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.3em 0.6em;
+    margin-left: 133px;
+}
+.twitter-icon{
+    font-size:23px;
+    color:  #404040;
+    padding: 1px;
+    display: inline-block;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.3em 0.4em;
+    margin-left: 17px;
+}
+.login-t-p{
+    text-align: center;
+    padding-top: 10%;
+    color: #45452e;
+}
+.login-b-p{
+    text-align: center;
+    color: black;
+    padding: 0px;
+    margin: 0px;
+}
+.login-b-p a{
+    color: black;
+    
+}
+input{
+    border: 1px;
+    outline: 1px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 20px ;
+    padding: 4px;
+    width: 360px;
+    background-color:#f2f2f2;
+}
+.btn-cls{
+    color: white;
+    background-color: #ff4929;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 15px 50px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: 120px;
+}
+.loginhome{
+    width: 100%;
+    height: 100%;
+}
+.loginhome h1{
+    text-align: center;
+    padding-top:10%;
+    font-size: 50px;
+    font-weight: 800;
+    color: #fc2c5d;
+    font-family: Arial,Sans-serif;
+    margin-bottom: 0%;
+}
+.loginhome p{
+    text-align: center;
+    font-size: 60px;
+    color: black;
+    font-family: Arial,Sans-serif;
+    margin-top:0% ;
+    margin-bottom: 1%;
+    padding-top: 0%;
+}
+#timeid{
+    color: #fc2c5d;
+    font-family: Arial,Sans-serif;
+}
+.loginhome a{
+    color: black;
+    font-size: 20px;
+    padding: 5px 12px;
+    font-weight: 500;
+    font-family: Arial,Sans-serif;
+    position: absolute;
+    left: 47%;
+    margin-top: 0%;
+    
+}
+#home{
+    background-color: white;
+}
+  
