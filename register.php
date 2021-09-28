@@ -14,26 +14,63 @@
 <body>
     <div>
 		<?php
-		#echo "hai";
-		#var_dump($_POST);
+
 		if(isset($_POST['create'])){
-			#echo "Hao";
-			#$name 				= $_POST['name'];
 			$varemail 				= $_POST['email'];
 			$varpassword 			= $_POST['password'];
-			#$confirmpassword	=$_POST['confirmpassword'];
 
-			$hash_password = password_hash($varpassword,PASSWORD_BCRYPT);
+            if ($varemail==""|| $varemail == null) {
+                $emailblank = "Please enter a valid mail id";
+                #echo '<script>alert("Null mailid")</script>';
+                #header("location:register.php");
 
-			$sql 		= "INSERT INTO users.usertable(email,password) VALUES('$varemail','$hash_password');";
-			$result		= $connect->query($sql);
-			if ($result) {
-				# code...
-				header("location:login.php");
-			}else{
-				echo '<script>alert("This email id is already registered")</script>';
-			}
-			
+            }else{
+                $hash_password      = password_hash($varpassword,PASSWORD_BCRYPT);
+
+                $sqlregister     = "SELECT email FROM users.usertable WHERE email='$varemail';";
+                $registerresult  = $connect->query($sqlregister);
+                $count       =$registerresult->num_rows;
+            #echo $row_count;
+                if ($count>0) {
+                # code...
+                    $emailblank = "An account with the same email id exist";
+                }else{
+                    $sql                = "INSERT INTO users.usertable(email,password) VALUES('$varemail','$hash_password');";
+                    $result             = $connect->query($sql);
+                    if ($result) {
+                        header("location:index.php");
+                    }
+                }
+            }
+
+            
+            
+
+			#
+            #echo $varemail;
+
+            #$sqlregister        = "SELECT COUNT(*) FROM users.usertable WHERE email='$varemail';";
+            #$registerresult     = $connect->query($sqlregister);
+            #echo $registerresult;
+            /*if ($registerresult>0) {
+                echo "already";
+            }else{
+                echo "no email";
+            }
+            /*
+                $sql                = "INSERT INTO users.usertable(email,password) VALUES('$varemail','$hash_password');";
+                $result             = $connect->query($sql);
+                if ($result) {
+                # code...
+                header("location:login.php");
+                }else{
+                echo '<script>alert("This email id is already registered")</script>';
+                }
+            }
+            else{
+                echo "Email id already exist";
+            }
+			*/
 		}
 		?>
     </div>
@@ -57,7 +94,12 @@
                     <input type="password" id="paswd" name="password" placeholder="Password">
                 </div>        
                 <div class="login-b-p">
-                    <p>Already have an account?<a href="login.php">Login</a></p>
+                    <?php 
+                        if (isset($emailblank)) { 
+                            echo "<p>$emailblank</p>";
+                        }
+                    ?>
+                    <p>Already have an account?<a href="index.php">Login</a></p>  
                 </div>
                 <button type="submit" name="create" class="btn-cls">Register</button>
             </form>

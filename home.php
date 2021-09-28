@@ -1,3 +1,10 @@
+<?php
+	session_start();
+    if (!isset($_SESSION['email'])) {
+        header("location:index.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +18,7 @@
     ?>
 	<div class="loginhome">
 		<h1>You have successfully logged in</h1>
-		<a href="login.php">Logout</a>	
+		<a href="logout.php">Logout</a>	
 	</div>
 </body>
 </html>

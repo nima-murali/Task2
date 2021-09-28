@@ -14,8 +14,8 @@
 
 	$db_sql 	= "CREATE DATABASE IF NOT EXISTS users";
 	if ($connect->query($db_sql) == false) {
-		echo "Already exist";
-		#return true;
+		#echo "Already exist";
+		return true;
 	}
 	$table_sql = "CREATE TABLE IF NOT EXISTS users.usertable(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,email VARCHAR(30) NOT NULL, password VARCHAR(10) NOT NULL)";
 
