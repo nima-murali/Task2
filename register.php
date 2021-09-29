@@ -27,7 +27,7 @@
             }else{
                 $hash_password      = password_hash($varpassword,PASSWORD_BCRYPT);
 
-                $sqlregister     = "SELECT email FROM users.usertable WHERE email='$varemail';";
+                $sqlregister     = "SELECT email FROM registerdb.registertable WHERE email='$varemail';";
                 $registerresult  = $connect->query($sqlregister);
                 $count       =$registerresult->num_rows;
             #echo $row_count;
@@ -35,42 +35,13 @@
                 # code...
                     $emailblank = "An account with the same email id exist";
                 }else{
-                    $sql                = "INSERT INTO users.usertable(email,password) VALUES('$varemail','$hash_password');";
+                    $sql                = "INSERT INTO registerdb.registertable(email,password) VALUES('$varemail','$hash_password');";
                     $result             = $connect->query($sql);
                     if ($result) {
                         header("location:index.php");
                     }
                 }
             }
-
-            
-            
-
-			#
-            #echo $varemail;
-
-            #$sqlregister        = "SELECT COUNT(*) FROM users.usertable WHERE email='$varemail';";
-            #$registerresult     = $connect->query($sqlregister);
-            #echo $registerresult;
-            /*if ($registerresult>0) {
-                echo "already";
-            }else{
-                echo "no email";
-            }
-            /*
-                $sql                = "INSERT INTO users.usertable(email,password) VALUES('$varemail','$hash_password');";
-                $result             = $connect->query($sql);
-                if ($result) {
-                # code...
-                header("location:login.php");
-                }else{
-                echo '<script>alert("This email id is already registered")</script>';
-                }
-            }
-            else{
-                echo "Email id already exist";
-            }
-			*/
 		}
 		?>
     </div>

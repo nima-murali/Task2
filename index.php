@@ -23,7 +23,7 @@
  				$email 		= $_POST['email'];
  				$password 	= $_POST['password'];
 
- 				$sqlfetch = " SELECT email,password FROM users.usertable;";
+ 				$sqlfetch = " SELECT email,password FROM registerdb.registertable;";
  				$result = $connect->query($sqlfetch);
  				$found = False;
  				foreach ($result as $userdata) {
